@@ -76,7 +76,6 @@ exports.studentRegister = async (req, res) => {
 
         const salt = await bcrypt.genSalt(10);
         const hashedPass = await bcrypt.hash(req.body.password, salt);
-        console.log('hello')
         const yearOfJoining = (req.body.joining).substring(2,4);
         var branchCode = "310";
         if (req.body.branch === "ece"){
